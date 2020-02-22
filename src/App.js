@@ -17,7 +17,8 @@ class App extends Component {
 
 
 
-  handleIncrement = () => {
+  handleIncrement = (event) => {
+    
     console.log("inside function")
     this.setState({ score: this.state.score + 1 });
     // this.setState({ clicked: true })
@@ -31,13 +32,24 @@ class App extends Component {
     }
   }
 
-  // scoreMechanics = (event) => {
-  //   let id = event.target.id
 
-  //   if 
+  // handleIncrement = (clickEvent) => {
+  //   var clicked = false
+  //   this.setState({ score: this.state.score + 1});
+  //   for (var i = 0; i < this.state.clickedItems.length; i++) {
+  //     if (this.state.clickedItems[i] === clickEvent) {
+  //       clicked = true;
+  //       if (clicked) {
+  //         this.setState.score = 0;
+  //       } else {
+  //         this.state.clickedItems.push(clickEvent)
+  //         this.setState({ score: this.state.score + 1});
+  //       }
+        
+  //     }
+  //   }
   // }
 
-  // if ()
 
 
   componentDidMount() {
@@ -77,6 +89,7 @@ class App extends Component {
   multiFunc = () => {
     this.shuffleFun();
     this.handleIncrement();
+    // this.gameOver();
     
   }
 
