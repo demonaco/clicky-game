@@ -97,8 +97,8 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className="navcontainer">
-          <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+          <nav className="navbar navbar-light bg-light">
+            <a className="navbar-brand" href="#">
               Gotta click 'em all!
   </a>
             <p className="yourScore">
@@ -115,8 +115,6 @@ class App extends Component {
             image={c.image} key={c.id} onClick={this.multiFunc}
           />
         )}
-        <row>
-        </row>
         <footer />
       </React.Fragment>
     );
