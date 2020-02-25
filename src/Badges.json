@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Boulder Badge",
-        "image": "/boulderbadge.png"
+        "image": "boulderbadge.png"
     },
     {
         "id": 2,
