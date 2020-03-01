@@ -9,11 +9,21 @@ import { render } from 'react-dom';
 
 class App extends Component {
   state = {
-    Badges,
+    badges:Badges,
     clickedItems: [],
     score: 0,
     clicked: false
   };
+
+  stopGame = (badges) => {
+    
+     if (this.state.clickedItems.includes(badges)) {
+     alert("You clicked the same badge twice! Please try again")
+     this.setState({score : 0})
+     }else{
+      this.state.clickedItems.push(badges);
+     }
+  }
 
 
 
@@ -54,7 +64,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    let newArr = this.state.Badges.sort(function (a, b) { return 0.5 - Math.random() })
+    let newArr = this.state.badges.sort(function (a, b) { return 0.5 - Math.random() })
     console.log("------")
     console.log(newArr)
     this.setState({
@@ -63,7 +73,7 @@ class App extends Component {
   }
 
   shuffleFun = () => {
-    let newArr = this.state.Badges.sort(function (a, b) { return 0.5 - Math.random() })
+    let newArr = this.state.badges.sort(function (a, b) { return 0.5 - Math.random() })
     console.log("------")
     console.log(newArr)
     this.setState({
@@ -86,9 +96,14 @@ class App extends Component {
 
 
 
-  multiFunc = () => {
+  multiFunc = (e) => {
+   
+    let clickedId = e.target.id
+  
     this.shuffleFun();
+
     this.handleIncrement();
+    this.stopGame(clickedId);
     // this.gameOver();
     
   }
@@ -110,9 +125,9 @@ class App extends Component {
         </div>
         <Bootstrap
         />
-        {this.state.Badges.map(c =>
+        {this.state.badges.map(c =>
           <BadgeCard
-            image={c.image} key={c.id} onClick={this.multiFunc}
+            image={c.image} id={c.id} onClick={this.multiFunc}
           />
         )}
         <footer />
